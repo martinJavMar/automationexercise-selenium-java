@@ -1,0 +1,6 @@
+tests\CartTests.class
+tests\HomeTests.class
+tests\E2ETests.class
+tests\LoginTests.class
+tests\ProductTests.class
+tests\ContacUsTests.class

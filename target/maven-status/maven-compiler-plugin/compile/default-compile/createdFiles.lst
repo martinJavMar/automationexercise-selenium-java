@@ -1,0 +1,15 @@
+page\SingUpPage.class
+model\UserData.class
+page\AccountCreatedPage.class
+page\PaymentPage.class
+page\DeleteAccountPage.class
+page\ProductsPage.class
+page\LoginPage.class
+base\BasePage.class
+base\BaseTest.class
+page\CartPage.class
+page\ContacUsPage.class
+page\HomePage.class
+page\PaymentDonePage.class
+utils\ScreenshotUtils.class
+page\ProductDetailsPage.class
