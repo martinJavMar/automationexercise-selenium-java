@@ -90,7 +90,7 @@ public class ProductsPage extends BasePage{
 	}
 	
 	public void clickBtnSearch() {
-		click(btnSubmint);
+		click2(btnSubmint);
 	}
 	
 	 public boolean isSearchResultDisplayed() {
@@ -105,18 +105,18 @@ public class ProductsPage extends BasePage{
 	    }
 	 
 	 public void addToCartContinueShopping(int id) {
-		 click(addToCartProductId(id));
-		 click(btnModalAddToCart);
+		 click2(addToCartProductId(id));
+		 click2(btnModalAddToCart);
 			 
 	 }
 	 
 	 public void addToCartViewCart(int id) {
-		 click(addToCartProductId(id));
-		 click(btnViewCart);		 
+		 click2(addToCartProductId(id));
+		 click2(btnViewCart);		 
 		 }
 	 
 	 public void viewProduct(int id) {
-		 click(producDetailId(id));
+		 click2(producDetailId(id));
 	 }
 	 
 	

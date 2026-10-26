@@ -15,7 +15,7 @@ public class ProductDetailsPage extends BasePage{
 	By quantity=By.id("quantity");
 	By btnAddToCart = By.cssSelector(".btn.btn-default.cart");
 	By viewCart=By.xpath("(//a[@href='/view_cart'])[2]");
-	By continueShopping=By.cssSelector(".btn btn-success close-modal btn-block");
+	By continueShopping = By.cssSelector(".btn.btn-success.close-modal.btn-block");
 	By reviews=By.cssSelector("a[href='#reviews']");
 	By inputName=By.id("name");
 	By inputEmailAddress=By.id("email");
@@ -54,7 +54,7 @@ public class ProductDetailsPage extends BasePage{
 		type(name, inputName);
 		type(email, inputEmailAddress);
 		type(review, inputReview);
-		click(btnSubmit);
+		click2(btnSubmit);
 		
 	}
 	

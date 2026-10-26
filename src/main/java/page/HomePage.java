@@ -42,14 +42,14 @@ public class HomePage extends BasePage {
 	}
 	
 	 public void addToCartContinueShopping(int id) {
-		 click(addToCartProductId(id));
-		 click(btnModalAddToCart);
+		 click2(addToCartProductId(id));
+		 click2(btnModalAddToCart);
 			 
 	 }
 	 
 	 public void addToCartViewCart(int id) {
-		 click(addToCartProductId(id));
-		 click(btnViewCart);		 
+		 click2(addToCartProductId(id));
+		 click2(btnViewCart);		 
 		 }
 
 	

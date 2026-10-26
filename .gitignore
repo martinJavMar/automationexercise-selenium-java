@@ -1,0 +1,27 @@
+
+# Maven
+
+target/
+
+
+
+# Logs
+
+logs/
+
+*.log
+
+
+
+# TestNG generated reports
+
+test-output/
+
+
+
+# Generated system files
+
+.DS_Store
+
+Thumbs.db
+

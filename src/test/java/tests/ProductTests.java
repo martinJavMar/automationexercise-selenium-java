@@ -1,7 +1,6 @@
 package tests;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.util.List;
@@ -62,30 +61,37 @@ public class ProductTests extends BaseTest {
 	    };
 	}
 	
-	@Test(dataProvider = "products",groups = {"smoke", "regression"})
-	
-	public void busquedaProductos(String producto) {
-		
-		
-       homePage.irProducts();
-		
-		productsPage.imagenVisibleProducs();
-		productsPage.searchProduct(producto);
-		productsPage.clickBtnSearch();
-		assertTrue(productsPage.isSearchResultDisplayed(),"No es visible el texto");
-		 List<String> products = productsPage.getProductNames();
-		 assertFalse(products.isEmpty());
-		 boolean found = products.stream()
-		            .anyMatch(product ->
-		                    product.toLowerCase()
-		                           .contains(producto.toLowerCase()));
 
-		 assertTrue(
-		            found,
-		            "No se encontró el producto: " + producto
-		    );
-			
-	}
+@Test(dataProvider = "products", groups = {"smoke", "regression"})
+public void busquedaProductos(String producto) {
+    homePage.irProducts();
+    productsPage.imagenVisibleProducs();
+    productsPage.searchProduct(producto);
+    productsPage.clickBtnSearch();
+
+    assertTrue(
+        productsPage.isSearchResultDisplayed(),
+        "No es visible el texto de resultados de búsqueda"
+    );
+
+    List<String> products = productsPage.getProductNames();
+
+    System.out.println("Producto buscado: " + producto);
+    System.out.println("Resultados encontrados: " + products);
+
+    String productoNormalizado = producto.trim()
+        .replaceAll("\\s+", " ")
+        .toLowerCase();
+
+    boolean found = products.stream()
+        .map(nombre -> nombre.trim()
+            .replaceAll("\\s+", " ")
+            .toLowerCase())
+        .anyMatch(nombre -> nombre.contains(productoNormalizado));
+
+    assertTrue(found, "No se encontró el producto: " + producto);
+}
+
 	
 	
 	@Test(groups = {"smoke", "regression"})

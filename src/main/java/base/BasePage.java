@@ -169,6 +169,31 @@ public class BasePage {
             checkbox.click();
         }
     }
+    
+
+public void click2(By locator) {
+    logger.info("Click en: " + locator);
+
+    WebElement element = wait.until(
+        ExpectedConditions.elementToBeClickable(locator)
+    );
+
+    try {
+        element.click();
+    } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+        logger.warn("Clic interceptado. Se intentará con JavaScript: " + locator);
+
+        WebElement visibleElement = wait.until(
+            ExpectedConditions.presenceOfElementLocated(locator)
+        );
+
+        ((JavascriptExecutor) driver).executeScript(
+            "arguments[0].click();",
+            visibleElement
+        );
+    }
+}
+
 
 	
 }
