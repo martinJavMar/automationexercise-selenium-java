@@ -24,7 +24,7 @@ public class LoginTests extends BaseTest  {
 	 
 	
 	
-  @Test (enabled = false)
+  @Test (groups = {"regression"})
   public void validarPaginaLogin() {
 	 goToLogin();
 	 
@@ -36,7 +36,7 @@ public class LoginTests extends BaseTest  {
   
  
   
-  @Test(enabled = false)
+  @Test(groups = {"smoke", "regression"})
   public void loginExitoso() {
 	  
 	     goToLogin();
@@ -49,7 +49,7 @@ public class LoginTests extends BaseTest  {
 	  
   }
   
-  @Test (enabled = false)
+  @Test (groups = {"regression"})
   public void loginUsuarioIncorrecto() {
 	  goToLogin();
 	  
@@ -60,7 +60,7 @@ public class LoginTests extends BaseTest  {
   }
   
   
-  @Test (enabled = false)
+  @Test (groups = {"smoke", "regression"})
   public void logOut() {
 	  goToLogin();
 	  
@@ -72,7 +72,7 @@ public class LoginTests extends BaseTest  {
   }
   
   
-  @Test
+  @Test(groups = {"regression"})
   public void registerUserExisting() {
 	  goToLogin();
 	  

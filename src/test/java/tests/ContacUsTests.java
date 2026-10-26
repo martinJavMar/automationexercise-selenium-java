@@ -11,14 +11,23 @@ import base.BaseTest;
 
 
 public class ContacUsTests extends BaseTest{
-  @Test
+  @Test (groups = {"regression"})
   public void validarFormularioContacto() {
+	  logger.info("Navegando a contato");
+	  
 	  homePage.isContacUs();
+	  
+	  logger.info("Validando pagina de contacto");
+	  
 	  assertTrue(contacUsPage.validateHeader(),"no es visible");
+	  
+	  logger.info("Registrando contacto");
+	  
 	  contacUsPage.writeName("marcos");
 	  contacUsPage.writeMail("marin@yopmail.com");
 	  contacUsPage.writeSubject("prueba");
 	  contacUsPage.writeMessage("Mensaje de prueba .");
+	  
 	  
 	  contacUsPage.uploadFile("C:\\Users\\XMF8742\\Desktop\\textfile.txt");
 	  

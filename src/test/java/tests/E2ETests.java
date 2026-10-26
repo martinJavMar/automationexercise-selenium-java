@@ -14,7 +14,7 @@ public class E2ETests extends BaseTest {
 	
 	
 	
-  @Test (enabled =false)
+  @Test (groups = {"regression", "e2e"})
   public void realizarPedidoRegistrandoseEnCheckoutTest() {
 	  
 	  assertTrue(
@@ -132,7 +132,7 @@ public class E2ETests extends BaseTest {
 	   
   }
   
- @Test (enabled =false)
+ @Test (groups = {"regression", "e2e"})
  public void placeOrderRegisterBeforeCheckout() {
 	 
 	 assertTrue(
@@ -250,7 +250,7 @@ public class E2ETests extends BaseTest {
 	  
  }
  
- @Test  (enabled= false)
+ @Test  (groups = {"smoke", "regression", "e2e"})
  public void placeOrderLogInBeforeCheckout() {
 	 
 	 assertTrue(homePage.carruselHome(),"El logo no es visible");
@@ -316,7 +316,7 @@ public class E2ETests extends BaseTest {
  }
  
  
- @Test (enabled= false)
+ @Test (groups = {"regression"})
  public void verifyCartAfterLogin() {
 	 
 	 homePage.irProducts();
@@ -357,7 +357,7 @@ public class E2ETests extends BaseTest {
 	 
  }
  
- @Test  (enabled= false)
+ @Test (groups = {"regression"})
  public void verifyUserCanAddProductFromRecommendedItemsToCart() {
 	 
 	 logger.info("Validando pagina de inicio");
@@ -383,7 +383,7 @@ public class E2ETests extends BaseTest {
 	 
  }
  
- @Test (enabled= false)
+ @Test (groups = {"regression"})
 public void shouldDisplayCorrectAddressDetailsAtCheckout() {
 	 
 	 logger.info("Validando pagina principal");

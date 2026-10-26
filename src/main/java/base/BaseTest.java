@@ -19,6 +19,7 @@ import page.SingUpPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.qameta.allure.testng.AllureTestNg;
@@ -50,15 +51,29 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
     	
-    	logger.info("Iniciando navegador");
-        WebDriverManager.chromedriver().setup();
-        
 
-        
-        driver = new ChromeDriver();
-     
+        logger.info("Iniciando navegador");
+
+        ChromeOptions options = new ChromeOptions();
+
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920,1080");
+
+        // Permite que Chrome se ejecute en el entorno de CI. 
+        options.addArguments("--disable-gpu");
+
+        WebDriverManager.chromedriver().setup();
+
+        driver = new ChromeDriver(options);
+
+
+
         driver.manage().window().maximize();
+
         driver.get("https://automationexercise.com/");
+
         logger.info("Página abierta correctamente");
         
         homePage = new HomePage(driver);

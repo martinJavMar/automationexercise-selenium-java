@@ -25,10 +25,10 @@ public class ProductTests extends BaseTest {
 	}
 	
 	
-	@Test (enabled=false)
+	@Test(groups = {"smoke", "regression"})
 	public void validarProductos() {
 		
-homePage.irProducts();
+        homePage.irProducts();
 		
 		productsPage.imagenVisibleProducs();
 		
@@ -62,7 +62,7 @@ homePage.irProducts();
 	    };
 	}
 	
-	@Test(enabled=false ,dataProvider = "products")
+	@Test(dataProvider = "products",groups = {"smoke", "regression"})
 	
 	public void busquedaProductos(String producto) {
 		
@@ -88,7 +88,7 @@ homePage.irProducts();
 	}
 	
 	
-	@Test (enabled=false)
+	@Test(groups = {"smoke", "regression"})
 	public void agregarProductos() {
 homePage.irProducts();
 		
@@ -107,7 +107,7 @@ homePage.irProducts();
 		
 	}
 	
-	@Test (enabled=false)
+	@Test (groups = {"regression"})
 	public void VerificarCantidadProductoEnCarritoTest() {
 homePage.irProducts();
 		
@@ -124,7 +124,7 @@ homePage.irProducts();
 	}
 	
 	
-	@Test 
+	@Test (groups = {"regression"})
 	public void verifyProductReviewSubmissio() {
 		
 		logger.info("Validando que cargue pantalla home");

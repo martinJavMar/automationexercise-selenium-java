@@ -22,7 +22,7 @@ public Object[][] emails() {
 
 }
 	
-  @Test (dataProvider = "emails")
+  @Test (dataProvider = "emails",groups = {"regression"})
   public void validarSuscricionCarrito(String email) {
 	  homePage.goToCart();
 	  
@@ -36,7 +36,7 @@ public Object[][] emails() {
 	  assertEquals(cartPage.getTextMessageSuscription(), "You have been successfully subscribed!");
 	  }
   
-  @Test
+  @Test (groups = {"regression"})
   public void removeProductFromCart() {
 	  
 	  assertTrue(homePage.carruselHome(),"No se muestra el carruel con productos");

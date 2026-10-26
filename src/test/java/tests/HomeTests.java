@@ -23,7 +23,7 @@ public class HomeTests extends BaseTest{
 	
 	
 	
-	@Test (enabled=false)
+	@Test (groups = {"regression"})
 	public void suscripcion() {
 		homePage.subscription("pruebas123@yopmail.com");
 		assertTrue(homePage.validatealertSuscription(),"No es visible la alerta");
@@ -32,7 +32,7 @@ public class HomeTests extends BaseTest{
 		
 	}
 	
-	@Test (enabled= false)
+	@Test (groups = {"regression"})
 	
 	public void verifyScrollUpUsingArrowButton() {
 		logger.info("Haciendo scroll al final de la pagina");
@@ -51,7 +51,7 @@ public class HomeTests extends BaseTest{
 		
 	}
 	
-	@Test
+	@Test (groups = {"regression"})
 	public void verifyScrollUpFunctionalityWithoutArrowButton() {
        logger.info("Haciendo scroll al final de la pagina");
 		

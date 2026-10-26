@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 
 public class BrandTests extends BaseTest {
-  @Test
+  @Test (groups = {"regression"})
   public void verifyProductFilteringByBrand() {
 	  
 	  logger.info("Validando carrusel de home");
