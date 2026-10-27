@@ -259,6 +259,9 @@ public class E2ETests extends BaseTest {
 	 
 	 loginPage.login("correo0107@yopmail.com", "12345");
 	 
+	 System.out.println("URL después del login: " + driver.getCurrentUrl());
+	 System.out.println("Título de la página: " + driver.getTitle());
+	 
 	 logger.info("validando icicio de sesión");
 	  
 	 assertTrue(loginPage.getLoggedInText().contains("Logged in as"),"No se encontro el mensaje ");
