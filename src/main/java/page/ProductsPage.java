@@ -127,7 +127,7 @@ public class ProductsPage extends BasePage{
 	 }
 	 
 	 public void selectBrand(String product) {
-		 click(selectProduct(product));
+		 click2(selectProduct(product));
 	 }
 	 
 	 public void scrollProdusctsSearch() {

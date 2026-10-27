@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 
+import java.nio.file.Paths;
+
 
 
 public class ContacUsTests extends BaseTest{
@@ -28,8 +30,11 @@ public class ContacUsTests extends BaseTest{
 	  contacUsPage.writeSubject("prueba");
 	  contacUsPage.writeMessage("Mensaje de prueba .");
 	  
-	  
-	  contacUsPage.uploadFile("C:\\Users\\XMF8742\\Desktop\\textfile.txt");
+	  String filePath = Paths.get(
+			    "src", "test", "resources", "textfile.txt"
+			).toAbsolutePath().toString();
+
+			contacUsPage.uploadFile(filePath);
 	  
 	  contacUsPage.clickSubmit();
 	  
